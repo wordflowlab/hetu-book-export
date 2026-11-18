@@ -415,13 +415,7 @@ test(
         main,
         'const {app,BrowserWindow}=require("electron");app.whenReady().then(()=>{const w=new BrowserWindow({width:1000,height:800,webPreferences:{nodeIntegration:false,contextIsolation:true}});w.loadFile(process.argv[2]);});app.on("window-all-closed",()=>app.quit());',
       );
-      const { _electron, expect } = await import(
-        pathToFileURL(
-          createRequire(path.join(host, "package.json")).resolve(
-            "@playwright/test",
-          ),
-        ).href
-      );
+      const { _electron, expect } = createRequire(path.join(host, "package.json"))("@playwright/test");
       viewer = await _electron.launch({
         executablePath: createRequire(path.join(host, "package.json"))(
           "electron",
