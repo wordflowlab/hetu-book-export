@@ -413,21 +413,26 @@ test(
       );
       await writeFile(
         main,
-        'const {app,BrowserWindow}=require("electron");app.whenReady().then(()=>{const w=new BrowserWindow({width:1000,height:800,webPreferences:{nodeIntegration:false,contextIsolation:true}});w.loadFile(process.argv[2]);});app.on("window-all-closed",()=>app.quit());',
+        'const {app,BrowserWindow}=require("electron");app.setPath("userData",process.env.HETU_OFFLINE_PROFILE);app.whenReady().then(()=>{const w=new BrowserWindow({width:1000,height:800,webPreferences:{nodeIntegration:false,contextIsolation:true}});w.loadFile(process.env.HETU_OFFLINE_FILE);});app.on("window-all-closed",()=>app.quit());',
       );
       const { _electron, expect } = createRequire(path.join(host, "package.json"))("@playwright/test");
       viewer = await _electron.launch({
         executablePath: createRequire(path.join(host, "package.json"))(
           "electron",
         ),
-        args: [main, file],
-        env: c.env,
+        args: [main],
+        env: {...c.env, HETU_OFFLINE_FILE: file, HETU_OFFLINE_PROFILE: path.join(c.directory, "offline-profile")},
+        timeout: 30000,
       });
+      console.log("cross: offline viewer launched");
       const page = await viewer.firstWindow();
+      page.setDefaultTimeout(15000);
+      page.on("pageerror", (error: Error) => console.error("offline player:", error.message));
       await page
         .getByRole("button", { name: "循着记号出发", exact: true })
         .click();
       await page.getByRole("button", { name: "保存存档", exact: true }).click();
+      console.log("cross: route and save");
       await page
         .getByRole("button", { name: "在渡口等待", exact: true })
         .click();
@@ -445,6 +450,7 @@ test(
         path: path.join(dest, "offline-player.png"),
         fullPage: true,
       });
+      console.log("cross: offline reload completed");
       await viewer.close();
       viewer = undefined;
       const old = records.get("interactive-fiction"),
