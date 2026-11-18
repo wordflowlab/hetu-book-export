@@ -1,0 +1,53 @@
+{
+  "source_repository": "https://github.com/limecloud/hetu",
+  "base_commit": "6053f973a6740b6f4d7fca1bd69452b2bac3fa46",
+  "scope": "固定公开SDK快照及共享素材；最低宿主0.11.11，SDK字节逐项摘要在构建校验，完整宿主提交与制品由发行证据绑定。",
+  "files": [
+    {
+      "file": "hetu-sdk.ts",
+      "source": "packages/plugin-sdk/src/index.ts",
+      "sha256": "922bfb17f945ae4180de7e116d62ef20950f58602441c615eff859055ba158cb"
+    },
+    {
+      "file": "project-store.ts",
+      "source": "packages/plugin-sdk/src/project-store.ts",
+      "sha256": "d91ae5c338a8c0d324a88674a9fa732e0b9bfb4cd1eb79b143f6b5fb5f1c36e8"
+    },
+    {
+      "file": "radix-workbench.css",
+      "source": "assets/styles/radix-workbench.css",
+      "sha256": "ccf9f4d25676a4225180128d05a3d0a9d26e92fa832fdccb7d80c4d52ee4b625"
+    },
+    {
+      "file": "radix-colors-MIT.txt",
+      "source": "assets/licenses/radix-colors-MIT.txt",
+      "sha256": "9c400881b9139571aa7acc3bd6e422a4f05223b4519169fb661298fb44bf228e"
+    },
+    {
+      "file": "hetu-LICENSE",
+      "source": "LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "file": "HetuExportSansSC-Regular.ttf.gz",
+      "source": "assets/fonts/HetuExportSansSC-Regular.ttf",
+      "sha256": "b786b762cbfebe7dff75122b22fac6a5607bed0afa2f2624573144e231306ba5"
+    },
+    {
+      "file": "OFL-NotoSansSC.txt",
+      "source": "assets/fonts/OFL-NotoSansSC.txt",
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "file": "NotoSansSC-source.json",
+      "source": "assets/fonts/NotoSansSC-source.json",
+      "sha256": "dc39e21a7848aad236d26a537967d69bc18ad768b59a6802a35ccaf3648bccbe"
+    },
+    {
+      "file": "fontkit-MIT.txt",
+      "source": "https://github.com/foliojs/fontkit/blob/master/LICENSE",
+      "source_blob_sha": "34d142021809672bcbbd880ec9c8957d9c474dd2",
+      "sha256": "cf22b8198f0886a8d4626121579114f23141070e1fceab02ab3c1c361e163440"
+    }
+  ]
+}
