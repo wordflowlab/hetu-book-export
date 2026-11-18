@@ -31,7 +31,8 @@
     {
       "file": "HetuExportSansSC-Regular.ttf.gz",
       "source": "assets/fonts/HetuExportSansSC-Regular.ttf",
-      "sha256": "b786b762cbfebe7dff75122b22fac6a5607bed0afa2f2624573144e231306ba5"
+      "sha256": "712b1b958268213d2c3d086b1875a632208e463f77f7a8c5403242c1b0c66e90",
+      "transform": "scripts/normalize-font.py：固定glyf四字节对齐后确定性gzip。"
     },
     {
       "file": "OFL-NotoSansSC.txt",
@@ -41,7 +42,7 @@
     {
       "file": "NotoSansSC-source.json",
       "source": "assets/fonts/NotoSansSC-source.json",
-      "sha256": "dc39e21a7848aad236d26a537967d69bc18ad768b59a6802a35ccaf3648bccbe"
+      "sha256": "5d54f7c5b7ea106d356ffec8ec82253af18e318c9271e2a1fe2ac08dba7ae609"
     },
     {
       "file": "fontkit-MIT.txt",

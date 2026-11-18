@@ -1,5 +1,6 @@
 import { zipSync, strToU8 } from "fflate";
 import { PDFDocument, PageSizes, rgb } from "pdf-lib";
+import { wrapLine } from "./typography.ts";
 import fontkit from "@pdf-lib/fontkit";
 import { readFile } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
@@ -354,18 +355,10 @@ export async function pdf(p: any, sources: any[]) {
   }
   function paragraph(t: string, bold = false) {
     for (const raw of t.replace(/\r\n?/g, "\n").split("\n")) {
-      let row = "";
-      for (const ch of [...raw.replace(/\t/g, "    ")]) {
-        if (
-          row &&
-          font.widthOfTextAtSize(row + ch, bold ? size + 2 : size) > usable
-        ) {
-          line(row, bold);
-          row = "";
-        }
-        row += ch;
-      }
-      line(row, bold);
+      for (const row of wrapLine(raw.replace(/\t/g, "    "), usable, (value) =>
+        font.widthOfTextAtSize(value, bold ? size + 2 : size),
+      ))
+        line(row, bold);
     }
     y -= leading / 3;
   }
