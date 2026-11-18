@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-18",
+  "host_version": "hetu 0.11.11",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "plugins": {
+    "lorebook-bridge": "0620fb1c75dbedd1e76306e1be3445ab383f801cfe0eac5341623a9e05054402",
+    "interactive-fiction": "c777120519a56fd93d1e132c078ac99b5a65f19103070a088b1cedf8f74e0a00",
+    "series-organizer": "e51032102970d97f650165fdd2e17a3a6b5991e707ab3028dfc54422969663dc",
+    "story-translation": "59080c4c196a79bdd09c50ebbd2a99d46a43dc561575a785fb9b8eed78ec3148",
+    "readthrough": "5723789aa1a672cdf9d1fb2e3a0756e7f2b194a67e50815d6ea5e8543dce8bd1",
+    "book-export": "e9dfd676d26c6ec450f21cdce83599b921492ca46e1a29a414400433a09c3e68"
+  },
+  "stages": [
+    "角色卡与世界书交换",
+    "确定性分支试玩",
+    "固定路线成为宿主候选",
+    "系列与独立作品隔离",
+    "固定源译对齐与译稿候选",
+    "真实声音与固定原文映射",
+    "双语书稿HTML EPUB PDF交付",
+    "新工程与旧书稿依据独立接续"
+  ],
+  "stable_mcp_connections": 1,
+  "separate_work_authorization": true,
+  "original_manuscript_unchanged": true,
+  "offline_play_save_reload": true,
+  "actual_tts_audio": true,
+  "audio_sha256": "78781809a55b2cd3438fbe252e43d6ac86c8efa59c746ca13bd30463950e314a",
+  "audio_duration_ms": 2068.875,
+  "complete_pcm_frames": true,
+  "speech_content_human_review": false,
+  "paid_model_calls": 0,
+  "limits": [
+    "Windows/Linux专业旅程、声音权利、人工听读、文学质量、正文采纳与定稿未在此验收"
+  ]
+}
